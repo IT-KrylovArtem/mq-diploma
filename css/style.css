@@ -10,6 +10,7 @@ sup {
 }
 .price-information a {
   color: #b59f5b;
+  
 }
 @font-face {
   font-family: OpenSans-Regular;
@@ -127,10 +128,7 @@ a {
 
 /*============ trend ============== */
 
-.post__list {
-  margin-left: auto;
-  margin-right: auto;
-}
+
 .trend-title {
   width: 100%;
   display: flex;
@@ -161,16 +159,14 @@ a {
 }
 
 .trend__container {
-  width: 100%;
+  max-width: 100%;
   /*   background-color: green; */
   display: flex;
 }
-
 .trend {
-  max-width: 100%;
-  flex-wrap: wrap;
-  display: flex;
+  max-width: calc(25% - 3px);
 }
+
 
 .trend__images {
   max-width: inherit;
@@ -272,16 +268,15 @@ a {
   font-family: OpenSans-Bold, sans-serif;
 }
 
-.trend__news {
+.news__information {
   font-size: 20px;
-  line-height: 24px;
+
   text-transform: uppercase;
   color: #ffffff;
   font-family: OpenSans-Bold, sans-serif;
 }
-.trend__news:hover {
+.news__information:hover {
   font-size: 20px;
-  line-height: 24px;
   text-transform: uppercase;
   color: #b59f5b;
   font-family: OpenSans-Bold, sans-serif;
@@ -391,7 +386,7 @@ a {
 /*===================== правый колонка ======================================== */
 
 .right-side {
-  width: 280px;
+  max-width: 280px;
   margin-left: 120px;
 }
 
@@ -417,15 +412,15 @@ a {
   margin-top: 14px;
 }
 
-/* .right__content {
-} */
+.right__content {
+  max-width: 100%;
+}
 
 .side-news {
   margin-bottom: 22px;
   display: flex;
 }
-/* .text__side {
-} */
+
 .picture__news__side {
   width: 70px;
   height: 70px;
@@ -465,9 +460,13 @@ a {
   margin-top: 60px;
   box-sizing: border-box;
 }
-
+.search-group {
+  flex-grow: 1;
+  max-width: 100%;
+  background-color: #f4f7f6;
+}
 .field {
-  width: 232px;
+  max-width: 100%;
   height: 48px;
   border: 1px #b59f5b;
   background-color: #f4f7f6;
@@ -482,7 +481,7 @@ a {
 }
 
 .field:focus {
-  max-width: 100%;
+  width: 100%;
   height: 48px;
   background-color: #f4f7f6;
   border: 1px solid #b59f5b;
@@ -728,18 +727,11 @@ a {
 }
 
 .product__content {
+  display: flex;
+  flex-direction: column;
 }
-
-.product__a__content {
-}
-.product__imgbox {
-  width: 347px;
-}
-
-/* <div class="products__images"> */
 
 .product__preview {
-  max-width: 300px;
   display: block;
   margin: auto;
   margin-bottom: -30px;
@@ -760,6 +752,8 @@ a {
   padding-right: 21px;
   padding-top: 54px;
   position: relative;
+  flex-grow: 1;
+  min-width: 100%;
 }
 
 .products__body::after {
@@ -769,6 +763,8 @@ a {
 }
 
 .products__information {
+  flex-wrap: wrap;
+  display: flex;
 }
 
 .price__of__information {
@@ -786,8 +782,9 @@ a {
 .product__button {
   height: 48px;
   width: 140px;
+  display: flex;
 }
-.product__btm {
+.button__name {
   border-style: none;
   height: 48px;
   width: 100%;
@@ -796,6 +793,9 @@ a {
   background-color: #b59f5b;
   color: #ffffff;
   font-family: OpenSans-Bold, sans-serif;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 .product__names {
   font-size: 20px;
@@ -924,19 +924,19 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #000000;
   opacity: 0.6;
+  background-color: #000000;
 }
 .popup-content {
   display: none;
-  /*   max-width: 391px;
-  min-height: 615px; */
   padding-left: 30px;
   padding-right: 30px;
   background-color: white;
   box-sizing: border-box;
   margin: auto;
   position: relative;
+  max-width: 390px;
+  max-height: 589px;
 }
 
 .title-feedback {
@@ -970,8 +970,7 @@ a {
   height: 48px;
   width: 100%;
 }
-
-.arrows {
+.select {
   height: 48px;
   width: 100%;
   padding-left: 20px;
@@ -983,12 +982,14 @@ a {
   box-sizing: border-box;
   margin-top: 13px;
   margin-bottom: 37px;
-
   background-image: url(https://raw.githubusercontent.com/netology-code/mq-diploma/44ce368d08172b8bcfd9e57182932478dd8dc022/sources/svg/form-arrows.svg);
   background-repeat: no-repeat;
   background-position: right 5px center;
   background-size: 10px;
+  -webkit-appearance: none;
+    -moz-appearance: none;
 }
+
 
 .answer-choices {
   margin-top: 12px;
@@ -997,12 +998,11 @@ a {
 
 .question-zone {
   margin-top: 12px;
-  min-width: 480px;
   max-width: 480px;
 }
 .fild-question {
   min-width: 480px;
-  max-width: 100%;
+  min-width: 100%;
   min-height: 130px;
   height: 100%;
   padding: 21px 21px;
@@ -1095,31 +1095,24 @@ a {
     margin-left: 65px;
   }
 }
-@media (min-width: 768px) and (max-width: 1200px) {
-  .header {
-    width: 100%;
-    background-image: url(https://raw.githubusercontent.com/netology-code/mq-diploma/master/sources/img/banner-bg-tablet.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-color: #000000;
-  }
+
+@media (min-width: 768px) and (orientation: portrait) and (max-width: 1200px) {
+
   .content {
-    /*   width: 100%;  */
-    flex-wrap: wrap;
     margin: auto;
-  }
-  .menu-list {
+    display: flex;
     margin-left: 37px;
     margin-right: 37px;
-    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
   }
-  .lists {
-    width: 100%;
+  .menu-list {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
   }
+
   .list {
     display: none;
   }
@@ -1154,17 +1147,16 @@ a {
   }
 
   /* ========= ТРЕНДЫ ============ */
+
   .trend__container {
-    flex-wrap: wrap;
     display: flex;
-  }
+    flex-wrap: wrap;
+    max-height: 100%; 
+ }
   .trend {
-    width: calc(50% - 3px);
+    min-width: calc(50% - 3px);
   }
-  .trend__text {
-    font-size: 17px;
-    line-height: 22px;
-  }
+
   .trend-link {
     font-size: 14px;
   }
@@ -1173,25 +1165,26 @@ a {
     font-size: 14px;
   }
 
-  .trend__news {
+  .news__information {
     font-size: 17px;
     line-height: 22px;
   }
-  .trend__news:hover {
+  .news__information:hover {
     font-size: 17px;
     line-height: 22px;
+  }
+
+  .trend:nth-of-type(2n + 2) {
+    margin-left: 3px;
   }
   .trend:nth-of-type(n + 3) {
     margin-top: 3px;
   }
 
-  .trend:nth-of-type(2n + 1) {
-    margin-right: 3px;
-  }
   /*=========== Главный контент ========== */
 
   .main__content {
-    max-width: 1200px;
+    max-width: 100%;
     margin-top: 65px;
     padding-right: 35px;
     padding-left: 35px;
@@ -1201,21 +1194,24 @@ a {
   }
 
   .left-side {
-    max-width: 800px;
     flex-wrap: wrap;
+    width: 50%;
+    flex-grow: 1;
   }
-
+  .right-side {
+    margin-left: 35px;
+  }
   .left-title {
-    width: 392px;
     margin-bottom: 65px;
-    flex-wrap: wrap;
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
   }
 
   /* ==============текс к картинкам к основному контенту======================== */
 
   .text {
-    width: 392px;
+    max-width: 100%;
     margin-top: 15px;
     border-bottom: 3px solid #eeeeee;
   }
@@ -1227,115 +1223,75 @@ a {
   }
 
   .picture__news {
-    max-width: 392px;
+    max-width: 100%;
     margin: 0;
     padding: 0;
   }
 
   /* ================= магазин ================ */
-  .shop-container {
-    height: 100%;
-  }
 
-  .product__content {
+  .shop-container {
     width: 100%;
   }
-  .product__content:nth-of-type(n + 3) {
-    margin-top: 28px;
+
+  .product__content:nth-of-type(n + 1) {
+    margin-bottom: 28px;
   }
   .product__content:nth-of-type(2n + 1) {
     margin-right: 22px;
   }
 
+  .content-footer {
+    margin-top: 36px;
+  }
+  .product__content {
+    min-width: 50%;
+  }
+  .product__preview { 
+    min-width: 90%;
+}
   /*=========== Окно фидбэка ============== */
 
   .popup {
-  display: none;
-    display: flex;
-    justify-content: center;
+    display: none;
     width: 100%;
     height: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    flex-direction: row;
-    align-content: center;
-    flex-wrap: wrap;
   }
   .popup::after {
-display: none;
-    content: "";
-    position: absolute;
-    position: fixed;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #000000;
-    opacity: 0.6;
+    display: none; 
+
   }
   .popup-content {
-   display: none;
-    /*   max-width: 391px;
-  min-height: 615px; */
-    padding-left: 30px;
-    padding-right: 30px;
-    background-color: white;
-    box-sizing: border-box;
-    margin: auto;
-    position: relative;
+    display: none;
+    max-width: 390px;
+    max-height: 596px;
+  }
+  .question-zone {
+    max-width: 330px;
+    min-width: 330px;
+  }
+  .fild-question {
+    max-width: 330px;
+    max-height: 131px;
   }
 }
-
-@media (max-width: 767px) {
-  .header {
-    background-image: url(https://raw.githubusercontent.com/netology-code/mq-diploma/master/sources/img/banner-mobile.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-color: #000000;
-    padding-top: 28px;
-    padding-bottom: 146px;
-    box-sizing: border-box;
-  }
+@media (min-width: 768px) and (orientation: landscape) and (max-width: 1200px) {
 
   .content {
-    margin-right: 15px;
-    margin-left: 15px;
-    flex-wrap: wrap;
-  }
-  .lists {
-    width: 100%;
+    margin: auto;
     display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row-reverse;
-  }
-  .logo {
-    width: 100%;
-    display: flex;
+    margin-left: 37px;
     margin-right: 37px;
-    padding-top: 185px;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
   }
-
   .menu-list {
-    width: 100%;
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: stretch;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
   }
 
-  .menu-list-item {
-    display: flex;
-    align-content: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
   .list {
     display: none;
   }
@@ -1355,31 +1311,226 @@ display: none;
     justify-content: center;
     justify-content: space-evenly;
   }
-
+  .btn__close:nth-of-type(n + 2) {
+    margin-top: 5px;
+  }
   .slogan {
-    width: 100%;
-    margin-top: 45px;
-    font-size: 26px;
-    line-height: 36px;
+    text-align: center;
+    margin: auto;
+    margin-top: 61px;
+    font-size: 45px;
+    display: flex;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: OpenSans-Bold, sans-serif;
+  }
+
+  /* ========= ТРЕНДЫ ============ */
+
+  .trend__container {
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 100%;
+  }
+  .trend {
+    max-width: calc(25% - 3px);
+  }
+
+  .trend-link {
+    font-size: 14px;
+  }
+
+  .trend-link:hover {
+    font-size: 14px;
+  }
+
+  .news__information {
+    font-size: 17px;
+    line-height: 22px;
+  }
+  .news__information:hover {
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .trend:nth-of-type(n + 2) {
+    margin-left: 3px;
+  }
+  .trend:nth-of-type(2n + 2) {
+    margin-bottom: 3px;
+  }
+  /*=========== Главный контент ========== */
+
+  .main__content {
+    max-width: 100%;
+    margin-top: 65px;
+    padding-right: 35px;
+    padding-left: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+  }
+
+  .left-side {
+    flex-wrap: wrap;
+    width: 50%;
   }
   .right-side {
+    margin-left: 35px;
+  }
+  .left-title {
+    margin-bottom: 65px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  /* ==============текс к картинкам к основному контенту======================== */
+
+  .text {
+    max-width: 100%;
+  }
+
+  .picture__news {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ================= магазин ================ */
+
+  .shop-container {
     width: 100%;
   }
-  .right__content {
+
+  .product__content:nth-of-type(n + 1) {
+    margin-bottom: 28px;
+  }
+  .product__content:nth-of-type(2n + 1) {
+    margin-right: 22px;
+  }
+  .content-footer {
+    margin-top: 36px;
+  }
+  .product__content {
+    min-width: 50%;
+  }
+  .product__preview { 
+    min-width: 90%;
+}
+
+  .products__body {
+    min-height: 267px;
+    border: 3px solid #b59f5b;
+    box-sizing: border-box;
+    padding-left: 21px;
+    padding-right: 21px;
+    padding-top: 54px;
+    position: relative;
+    flex-grow: 1;
+    min-width: 100%;
+  }
+  /*=========== Окно фидбэка ============== */
+
+  .popup {
+    display: none;
+
+  }
+  .popup::after {
+    display: none;
+    content: "";
+    opacity: 0.6;
+  }
+  .popup-content {
+    display: none;
+    max-width: 390px;
+    max-height: 596px;
+  }
+  .question-zone {
+    max-width: 330px;
+    min-width: 330px;
+  }
+  .fild-question {
+    max-width: 330px;
+    min-width: 330px;
+    min-height: 131px;
+  }
+}
+@media (orientation: portrait) and (max-width: 767px) {
+  .header {
     width: 100%;
+    height: 100%;
+  }
+
+  .content {
+    margin: auto;
+    display: flex;
+    margin-left: 37px;
+    margin-right: 37px;
+    flex-direction: row;
+  }
+  .logo {
+    padding-top: 175px;
+    max-height: 225px;
+    min-width: 100%;
+  }
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .list {
+    display: none;
+  }
+  .hamburger__menu__conteiner {
+    width: 23px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .hamburger__menu {
+    width: 23px;
+    height: 3px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-evenly;
+  }
+  .btn__close:nth-of-type(n + 2) {
+    margin-top: 5px;
+  }
+  .slogan {
+    max-width: 80%;
+    text-align: center;
+    margin: auto;
+    margin-top: 61px;
+    font-size: 26px;
+    display: flex;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: OpenSans-Bold, sans-serif;
   }
 
   /* ========= ТРЕНДЫ ============== */
 
   .trend__container {
     flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
   }
   .trend {
     max-width: 100%;
   }
   .trend__text {
-    font-size: 17px;
-    line-height: 22px;
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
   }
   .trend-link {
     font-size: 14px;
@@ -1389,26 +1540,20 @@ display: none;
     font-size: 14px;
   }
 
-  .trend__news {
-    font-size: 17px;
-    line-height: 22px;
+  .news__information {
+    font-size: 16px;
   }
-  .trend__news:hover {
-    font-size: 17px;
-    line-height: 22px;
+  .news__information:hover {
+    font-size: 16px;
   }
-  .trend:nth-of-type(n + 2) {
+  .trend:nth-of-type(n + 3) {
     margin-top: 3px;
-  }
-
-  .trend:nth-of-type(2n + 1) {
-    margin-right: 3px;
   }
 
   /*=========== Главный контент ========== */
 
   .main__content {
-    width: 100%;
+    max-width: 100%;
     padding-right: 15px;
     padding-left: 15px;
     display: flex;
@@ -1416,21 +1561,27 @@ display: none;
   }
 
   .left-side {
-    width: 100%;
+    max-width: 100%;
     flex-wrap: wrap;
   }
 
   .left-title {
-    width: 100%;
+    max-width: 100%;
     margin-bottom: 65px;
     flex-wrap: wrap;
   }
   .right-side {
-    width: 100%;
+    margin: 0;
+    min-width: 100%
   }
 
   .right__content {
-    width: 100%;
+    max-width: 100%;
+  }
+  .search-group {
+    max-width: 100%;
+    flex-grow: 1;
+    background-color: #f4f7f6ed;
   }
   /* ==============текс к картинкам к основному контенту======================== */
 
@@ -1446,7 +1597,7 @@ display: none;
   }
 
   .picture__news {
-    max-width: 392px;
+    min-width: 100%;
     margin: 0;
     padding: 0;
   }
@@ -1460,53 +1611,43 @@ display: none;
     width: 100%;
   }
   .product__content:nth-of-type(n + 2) {
-    margin-top: 28px;
+    margin-top: 20px;
   }
-
+  .product__preview {
+    min-width: 90%;
+  }
+  .products__body {
+    max-width: 100%;
+  }
+  .trend:nth-of-type(n + 2) {
+    margin-top: 3px;
+  }
+  .products__body {
+    min-height: 267px;
+    border: 3px solid #b59f5b;
+    box-sizing: border-box;
+    padding-left: 21px;
+    padding-right: 21px;
+    padding-top: 54px;
+    position: relative;
+    flex-grow: 1;
+  }
   /*=========== Окно фидбэка ============== */
 
-  .popup {
+.popup {
     display: none;
-    display: flex;
-
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    flex-direction: row;
-    align-content: center;
-    flex-wrap: wrap;
+   
   }
   .popup::after {
     display: none;
     content: "";
-    position: absolute;
-    position: fixed;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #000000;
     opacity: 0.6;
   }
   .popup-content {
     max-width: 100%;
-    display: none;
-    /*   max-width: 391px;
-  min-height: 615px; */
-    padding-left: 30px;
-    padding-right: 30px;
-    background-color: white;
-    box-sizing: border-box;
-    margin: auto;
-    position: relative;
-    flex-wrap: wrap;
+    min-height: 615px;
+    margin-left: 15px;
+    margin-right: 15px;
   }
   .title-feedback {
     font-size: 14px;
@@ -1540,38 +1681,248 @@ display: none;
     width: 100%;
   }
 
-  .arrows {
-    height: 48px;
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-style: none;
-    background-color: #f4f7f6;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-sizing: border-box;
-    margin-top: 13px;
-    margin-bottom: 37px;
 
-    background-image: url(https://raw.githubusercontent.com/netology-code/mq-diploma/44ce368d08172b8bcfd9e57182932478dd8dc022/sources/svg/form-arrows.svg);
-    background-repeat: no-repeat;
-    background-position: right 5px center;
-    background-size: 10px;
+
+  .question-zone {
+    margin-top: 12px;
+    min-width: 280px;
+    min-height: 131px;
+  }
+  .fild-question {
+    min-height: 131px;
+    max-width: 280px;
+    max-width: 100%;
+    height: 100%;
+    padding: 21px 21px;
+    box-sizing: border-box;
   }
 
-  .answer-choices {
+
+  .fild-question {
+    min-height: 130px;
+    height: 100%;
+    padding: 21px 21px;
+    box-sizing: border-box;
+  }
+  .question-zone {
     margin-top: 12px;
-    margin-bottom: 35px;
+    min-width: 280px;
+  }
+  .fild-question {
+    max-width: 280px;
+    min-width: 100%;
+    min-height: 131px;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 767px) {
+
+
+  .content {
+    margin: auto;
+    display: flex;
+    margin-left: 37px;
+    margin-right: 37px;
+    flex-direction: row;
+  }
+  .logo {
+    padding-top: 175px;
+    max-height: 225px;
+    min-width: 100%;
+  }
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .list {
+    display: none;
+  }
+  .hamburger__menu__conteiner {
+    width: 23px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .hamburger__menu {
+    width: 23px;
+    height: 3px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-evenly;
+  }
+  .btn__close:nth-of-type(n + 2) {
+    margin-top: 5px;
+  }
+  .slogan {
+    max-width: 85%;
+    text-align: center;
+    margin: auto;
+    margin-top: 61px;
+    font-size: 26px;
+    display: flex;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: OpenSans-Bold, sans-serif;
+  }
+
+  /* ========= ТРЕНДЫ ============== */
+
+  .trend__container {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+  }
+  .trend {
+    max-width: calc(50% - 3px);
+  }
+
+  .trend:nth-of-type(2n + 1) {
+    margin-right: 3px;
+  }
+  .trend:nth-of-type(n + 3) {
+    margin-top: 3px;
+  }
+  .trend__text {
+    max-width: 100%;
+    font-size: 16px;
+  }
+  .trend-link {
+    font-size: 14px;
+  }
+
+  .trend-link:hover {
+    font-size: 14px;
+  }
+
+  .news__information {
+    font-size: 16px;
+  }
+  .news__information:hover {
+    font-size: 16px;
+  }
+
+  /*=========== Главный контент ========== */
+
+  .main__content {
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .left-side {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .left-title {
+    max-width: 100%;
+    margin-bottom: 65px;
+    flex-wrap: wrap;
+  }
+  .right-side {
+    max-width: 100%;
+    margin: 0;
+    min-width: 100%;
+  }
+
+  .right__content {
+    max-width: 100%;
+  }
+  .search-group {
+    max-width: 100%;
+    flex-grow: 1;
+    background-color: #f4f7f6ed;
+  }
+  /* ==============текс к картинкам к основному контенту======================== */
+
+  .text {
+    width: 100%;
+    margin-top: 15px;
+    border-bottom: 3px solid #eeeeee;
+  }
+
+  .news__name {
+    list-style-type: none;
+    margin-bottom: 15px;
+  }
+
+  .picture__news {
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  /* ================= магазин ================ */
+  .shop-container {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .product__content {
+    width: 100%;
+  }
+  .product__content:nth-of-type(n + 2) {
+    margin-top: 20px;
+  }
+  .product__preview {
+    min-width: 90%;
+  }
+  .products__body {
+    max-width: 100%;
+  }
+
+  /*=========== Окно фидбэка ============== */
+
+  .popup {
+    display: none;
+    width: 100%;
+    height: 100%;
+   
+  }
+  .popup::after {
+    display: none;
+    content: "";
+    opacity: 0.6;
+  }
+  .popup-content {
+    max-width: 100%;
+    min-height: 615px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .title-feedback {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #0f0d0e;
+    font-family: OpenSans-Bold, sans-serif;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 54px;
+  }
+
+
+  .question-field {
+    height: 48px;
+    width: 100%;
   }
 
   .question-zone {
     margin-top: 12px;
-
-    width: 100%;
+    min-width: 280px;
+    min-height: 131px;
+    max-width: 100%;
   }
   .fild-question {
+    min-height: 131px;
+    max-width: 280px;
     max-width: 100%;
-    min-height: 130px;
     height: 100%;
     padding: 21px 21px;
     box-sizing: border-box;
